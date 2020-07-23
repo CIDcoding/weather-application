@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApplication</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/a44d043f28.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css" />
+</head>
+
+<body>
+    <div class="header">
+        <h1>
+            item<strong>Weather</strong>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="search-bar">
+            <form id="search">
+                <div class="form-group">
+
+                    <input class="input" type="text" placeholder="Enter a City name" id="search-text">
+                    <button type="submit" class="btn btn-primary" id="search-button">Search</button>
+                    <button type="button" class="btn btn-success" id="location-button">Location</button>
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+
+        <div class="row">
+            <!-- <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img src="images/egyptian-pyramids-during-sunset-3873681.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>SAT</strong>, 7th July</h5>
+                            <p class="city-name"><strong>Cairo</strong>, <em>Egypt</em>
+                                <p class="temp"><i class="fas fa-cloud-sun"></i><br /> Mostly cloudy <br /> 25&#176C/&#176F</p>
+                            </p>
+                            <p class="time"><small class="text-muted">16.21 PM</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            <div class="card bg-transparent text-white image">
+                <img src="images/egyptian-pyramids-during-sunset-3873681.jpg" class="card-img" alt="Egypt">
+                <div class="card-img-overlay">
+                    <h5 class="card-title" id="date"><strong>SAT</strong>, 6th July</h5>
+                    <p class="city-name" id="city-name"><strong>Cairo</strong></p>
+                    <p class="time" id="time">16.21 PM</p>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="weather-description" id="weather-description"><strong>Mostly rainy</strong></h5>
+                        <i class="fas fa-cloud-showers-heavy" id="description-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-7">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item  bg-transparent" id="feels-like">Feels like: 12&#176C</li>
+                    <li class="list-group-item bg-transparent" id="max">Max: 22ºC</li>
+                    <li class="list-group-item  bg-transparent" id="min">Min: 13ºC</li>
+                    <li class="list-group-item bg-transparent" id="wind">Wind: 4mph</li>
+                    <li class="list-group-item bg-transparent" id="hum">Humidity: 63%</li>
+                    <li class="list-group-item  bg-transparent" id="rain">Chance of rain: 80%</li>
+
+                </ul>
+            </div>
+
+
+            <div class="col-sm-5">
+                <div class="temperature">
+                    <span id="current-temp">14</span><small><a href="#" id="celcius">ºC</a>/<a href="#" id="fahrenheit">ºF</a></small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--  <div class="col-sm-5">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Precipitation: 0cm</li>
+                    <li class="list-group-item">Wind: 4mph</li>
+                    <li class="list-group-item">Humidity: 63%</li>
+                    <li class="list-group-item">Chance of rain: 80%</li>
+                    <li class="list-group-item">Feels like: 12&#176C</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning" role="alert" id="friendly-advice">
+                    Friendly Advice - item recommendations based on current weather conditions 🙃
+                </div>
+
+            </div>
+        </div>
+
+        <div class="next-week">
+            <p>
+                <strong>
+                Forecast of the Week:
+                </strong>
+            </p>
+        </div>
+
+
+        <div class="weekly-forecast">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group list-group-horizontal-md forecast">
+                        <li class="list-group-item  bg-transparent">
+                            <i class="fas fa-cloud-sun"></i>
+                            <br />
+                            <p class="day-of-week">
+                                SUN
+                                <br /> 18&#176C
+                            </p>
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                            <br />
+                            <p class="day-of-week">
+                                MON
+                                <br /> 16&#176C
+                            </p>
+
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="fas fa-cloud-showers-heavy"></i>
+                            <br />
+                            <p class="day-of-week">
+                                TUE
+                                <br /> 12&#176C
+                            </p>
+
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="fas fa-cloud-showers-heavy"></i>
+                            <br />
+                            <p class="day-of-week">
+                                WED
+                                <br /> 13&#176C
+                            </p>
+
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="fas fa-sun"></i>
+                            <br />
+                            <p class="day-of-week">
+                                THU
+                                <br /> 19&#176C
+                            </p>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!--  <script>
+        function searchCity(event) {
+            event.preventDefault();
+            let searchInput = document.querySelector("#search-text");
+            let city = document.querySelector("#city-name");
+            city.innerHTML = `${searchInput.value}`;
+        }
+
+        let form = document.querySelector("#search");
+        form.addEventListener("submit", searchCity);
+    </script> -->
+
+    <!--  <script>
+        var temp
+        let weather = {
+            "paris": {
+                temp: 19.7,
+                humidity: 80
+            },
+            "tokyo": {
+                temp: 17.3,
+                humidity: 50
+            },
+            "lisbon": {
+                temp: 30.2,
+                humidity: 20
+            },
+            "san francisco": {
+                temp: 20.9,
+                humidity: 100
+            },
+            "moscow": {
+                temp: -5,
+                humidity: 20
+            }
+        };
+        let searchCity = prompt("Enter a city name").toLocaleLowerCase().trim();
+
+        var fah
+
+        function toFahrenheit(degrees) {
+            let fah = (degrees * 9 / 5) + 32;
+            return fah
+
+        }
+
+        let weather_keys = Object.keys(weather);
+        if (weather_keys.includes(searchCity)) {
+            alert(`it is currently ${weather[searchCity].temp}ºC (${toFahrenheit(weather[searchCity].temp)}ºF) in ${searchCity} with a humidity of ${weather[searchCity].humidity}%`)
+        } else {
+            alert(`Sorry, we do not know the temperature in this city, try going to https://www.google.com/search?q=weather+${searchCity}`)
+        }
+    </script>
+ -->
+    <script src="src/Java.js"></script>
+</body>
+
+</html>
