@@ -115,3 +115,8 @@
     .forecast {
         margin-left: -2px;
     }
+    
+    .source-code {
+        text-align: center;
+        margin-top: 5px;
+    }
