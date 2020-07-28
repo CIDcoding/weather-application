@@ -1,5 +1,6 @@
     body {
         background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+        background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
         font-family: 'Exo', sans-serif;
         font-weight: 600;
         margin-left: 25px;
@@ -74,10 +75,16 @@
         width: 103%;
     }
     
+    img#description-icon {
+        width: 180px;
+        margin-left: -30px;
+        margin-top: -45px;
+    }
+    
     .temperature {
         float: right;
         margin-left: 10px;
-        margin-right: 50px;
+        margin-right: 47px;
         margin-top: 25px;
         font-size: 50px;
         font-family: 'Exo', sans-serif;

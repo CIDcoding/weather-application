@@ -51,6 +51,11 @@ function showTemperature(response) {
     city.innerHTML = `${response.data.name}`;
     let weatherDescription = document.querySelector("#weather-description");
     weatherDescription.innerHTML = `${response.data.weather[0].description}`;
+    let weatherIcon = document.querySelector("#description-icon");
+    let iconId = response.data.weather[0].icon;
+    weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${iconId}@2x.png`);
+    weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
+
     let currentWeather = `${response.data.weather[0].description}`;
     let itemSuggestion = document.querySelector("#friendly-advice");
     if ((currentWeather === "clear sky" || currentWeather === "sunny" || currentWeather === "sun") && temperature >= 25) {
