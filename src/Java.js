@@ -105,7 +105,6 @@ locationButton.addEventListener("click", getPosition);
 
 //City
 function searchCity(event) {
-    debugger;
     event.preventDefault();
     let searchInput = document.querySelector("#search-text");
     let city = document.querySelector("#city-name");

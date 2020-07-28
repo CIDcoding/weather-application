@@ -75,10 +75,17 @@
     }
     
     .temperature {
-        margin-left: 35px;
+        float: right;
+        margin-left: 10px;
+        margin-right: 50px;
         margin-top: 25px;
         font-size: 50px;
         font-family: 'Exo', sans-serif;
+    }
+    
+    .units {
+        float: right;
+        font-size: 25px;
     }
     
     .alert-warning {
