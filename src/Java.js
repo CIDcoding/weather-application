@@ -87,8 +87,8 @@ function showTemperature(response) {
     feels.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}ºC`;
     let windSpeed = document.querySelector("#wind");
     windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed}mph`;
-    let chanceOfRain = document.querySelector("#rain");
-    chanceOfRain.innerHTML = `Chance of rain: ${response.data.rain["1h"] * 100}%`
+    // let chanceOfRain = document.querySelector("#rain");
+    // chanceOfRain.innerHTML = `Chance of rain: ${response.data.rain["1h"] * 100}%`
 }
 
 //Location
