@@ -129,6 +129,9 @@ function toFahrenheit(event) {
     let fah = (temperature * 9 / 5) + 32;
     fah = Math.round(fah);
     let currentTemp = document.querySelector("#current-temp");
+    tempCelcius.classList.remove("active");
+    tempFahrenheit.classList.add("active");
+
     currentTemp.innerHTML = `${fah}`;
 }
 
@@ -140,6 +143,8 @@ function toDegrees(event) {
     // let deg = ((fah - 32) * 5) / 9;
     // deg = Math.round(deg);
     let currentTemp = document.querySelector("#current-temp");
+    tempCelcius.classList.add("active");
+    tempFahrenheit.classList.remove("active");
     currentTemp.innerHTML = `${temperature}`;
 }
 

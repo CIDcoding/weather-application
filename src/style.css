@@ -91,8 +91,19 @@
     }
     
     .units {
+        position: relative;
         float: right;
-        font-size: 25px;
+        font-size: 20px;
+        top: 8px;
+    }
+    
+    .temperature a.active {
+        color: #343A40;
+        cursor: default;
+    }
+    
+    .temperature a.active:hover {
+        text-decoration: none;
     }
     
     .alert-warning {
