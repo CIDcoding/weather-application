@@ -134,8 +134,7 @@
     }
     
     div.next-week p {
-        text-decoration: underline;
-        line-height: 3px;
+        line-height: 1px;
         font-size: 18px;
     }
     
@@ -145,6 +144,23 @@
     
     .weekly-forecast {
         margin-bottom: 10px;
+    }
+    
+    .weekly-forecast img {
+        display: block;
+        margin: 0 auto;
+        width: 60px;
+        margin-bottom: 3px;
+    }
+    
+    .weekly-forecast h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .weekly-forecast .forecast-temp {
+        text-align: center;
+        font-weight: 400;
     }
     
     .source-code {
