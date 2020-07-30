@@ -53,28 +53,57 @@ function showTemperature(response) {
     weatherDescription.innerHTML = `${response.data.weather[0].description}`;
     let weatherIcon = document.querySelector("#description-icon");
     let iconId = response.data.weather[0].icon;
-    weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${iconId}@2x.png`);
+    weatherIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${iconId}@2x.png`
+    );
     weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
 
     let currentWeather = `${response.data.weather[0].description}`;
     let itemSuggestion = document.querySelector("#friendly-advice");
-    if ((currentWeather === "clear sky" || currentWeather === "sunny" || currentWeather === "sun") && temperature >= 25) {
-        itemSuggestion.innerHTML = `Friendly advice - consider wearing a 👒, bringing sunscreen and 🕶️ along!`
-
-    } else if ((currentWeather === "clear sky" || currentWeather === "sunny" || currentWeather === "sun") && 20 < temperature < 25) {
-        itemSuggestion.innerHTML = `Friendly advice - it's not too hot but a 👒 and 🕶️ might come in handy!`
-
-    } else if ((currentWeather === "clear sky" || currentWeather === "sunny" || currentWeather === "sun") && temperature < 20) {
-        itemSuggestion.innerHTML = `Friendly advice - Don't forget your 🕶️ this time!`
-
-    } else if ((currentWeather === "clear sky" || currentWeather === "sunny" || currentWeather === "sun") && temperature < 15) {
-        itemSuggestion.innerHTML = `Friendly advice - perhaps it's time to layer up with a hoodie or jacket!`
-    } else if ((currentWeather === "light rain" || currentWeather === "rain" || currentWeather === "showers")) {
-        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ this time!`
-    } else if ((currentWeather === "light rain" || currentWeather === "rain" || currentWeather === "showers") && temperature < 20) {
-        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ and a light coat might come in handy!`
+    if (
+        (currentWeather === "clear sky" ||
+            currentWeather === "sunny" ||
+            currentWeather === "sun") &&
+        temperature >= 25
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - consider wearing a 👒, bringing sunscreen and 🕶️ along!`;
+    } else if (
+        (currentWeather === "clear sky" ||
+            currentWeather === "sunny" ||
+            currentWeather === "sun") &&
+        20 < temperature < 25
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - it's not too hot but a 👒 and 🕶️ might come in handy!`;
+    } else if (
+        (currentWeather === "clear sky" ||
+            currentWeather === "sunny" ||
+            currentWeather === "sun") &&
+        temperature < 20
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your 🕶️ this time!`;
+    } else if (
+        (currentWeather === "clear sky" ||
+            currentWeather === "sunny" ||
+            currentWeather === "sun") &&
+        temperature < 15
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - perhaps it's time to layer up with a hoodie or jacket!`;
+    } else if (
+        currentWeather === "light rain" ||
+        currentWeather === "rain" ||
+        currentWeather === "showers"
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ this time!`;
+    } else if (
+        (currentWeather === "light rain" ||
+            currentWeather === "rain" ||
+            currentWeather === "showers") &&
+        temperature < 20
+    ) {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ and a light coat might come in handy!`;
     } else if (currentWeather === "heavy rain") {
-        itemSuggestion.innerHTML = `Friendly advice -perhaps staying indoors until it stops raining 🐈s and 🐕s is a good idea!`
+        itemSuggestion.innerHTML = `Friendly advice -perhaps staying indoors until it stops raining 🐈s and 🐕s is a good idea!`;
     }
 
     let maxTemp = document.querySelector("#max");
@@ -84,7 +113,9 @@ function showTemperature(response) {
     let hum = document.querySelector("#hum");
     hum.innerHTML = `Humidity: ${response.data.main.humidity}%`;
     let feels = document.querySelector("#feels-like");
-    feels.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}ºC`;
+    feels.innerHTML = `Feels like: ${Math.round(
+        response.data.main.feels_like
+    )}ºC`;
     let windSpeed = document.querySelector("#wind");
     windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed}mph`;
     // let chanceOfRain = document.querySelector("#rain");
@@ -121,34 +152,33 @@ function formatHours(timestamp) {
         minutes = `0${minutes}`;
     }
 
-    return `${hours}:${minutes}`
-
-
+    return `${hours}:${minutes}`;
 }
 
 function displayForecast(response) {
     let forecast = null;
     console.log(forecast);
     let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = "";
     for (let index = 0; index < 6; index++) {
         forecast = response.data.list[index];
         forecastElement.innerHTML += ` 
-    <div class="row">
-                <div class="col-6">
-                    <ul class="list-group list-group-horizontal-md forecast">
-                        <li class="list-group-item  bg-transparent">
+                <div class="col-2">
                             <h3> ${formatHours(forecast.dt * 1000)} </h3>
-                            <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="weather icon" />
+                            <img src="http://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+            }@2x.png" alt="weather icon" />
                             <div class="forecast-temp">
-                                <strong>${Math.round(forecast.main.temp_max)}º</strong>  ${Math.round(forecast.main.temp_min)}º
+                                <strong>${Math.round(
+                forecast.main.temp_max
+            )}º</strong>  ${Math.round(
+                forecast.main.temp_min
+            )}º
                             </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
         </div>`;
     }
-    // forecastElement.innerHTML = ` 
+    // forecastElement.innerHTML = `
     // <div class="row">
     //             <div class="col-6">
     //                 <ul class="list-group list-group-horizontal-md forecast">
@@ -163,8 +193,6 @@ function displayForecast(response) {
     //             </div>
     //         </div>
     //     </div>`;
-
-
 }
 
 //City
@@ -173,21 +201,25 @@ function searchCity(event) {
     let searchInput = document.querySelector("#search-text");
     let city = document.querySelector("#city-name");
     city.innerHTML = `${searchInput.value}`;
-    let apiUrlTwo = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrlTwo).then(showTemperature);
-    let apiUrlThree = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput.value}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrlThree).then(displayForecast);
+    search(searchInput.value);
 }
 
 let form = document.querySelector("#search");
 form.addEventListener("submit", searchCity);
+
+function search(city) {
+    let apiUrlTwo = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrlTwo).then(showTemperature);
+    let apiUrlThree = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrlThree).then(displayForecast);
+}
 
 // var fah = 57;
 
 //Unit conversion
 function toFahrenheit(event) {
     event.preventDefault();
-    let fah = (temperature * 9 / 5) + 32;
+    let fah = (temperature * 9) / 5 + 32;
     fah = Math.round(fah);
     let currentTemp = document.querySelector("#current-temp");
     tempCelcius.classList.remove("active");
@@ -212,4 +244,4 @@ function toDegrees(event) {
 let tempCelcius = document.querySelector("#celcius");
 tempCelcius.addEventListener("click", toDegrees);
 
-searchCity("Paris")
+search("Paris");

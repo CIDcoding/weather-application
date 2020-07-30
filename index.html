@@ -7,8 +7,8 @@
     <title>WeatherApplication</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/a44d043f28.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link rel="stylesheet" href="src/style.css" />
 </head>
 
@@ -56,7 +56,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="weather-description" id="weather-description"><strong>Mostly rainy</strong></h5>
-                        <img src="" id="description-icon" alt="" />
+                        <img src="#" id="description-icon" alt="" />
                         <!-- <i class="fas fa-cloud-showers-heavy" id="description-icon"></i> -->
                     </div>
                 </div>
@@ -114,21 +114,7 @@
                 </div>
             </div>
         </div> -->
-        <div class="weekly-forecast" id="forecast">
-            <div class="row">
-                <div class="col-6">
-                    <ul class="list-group list-group-horizontal-md forecast">
-                        <li class="list-group-item  bg-transparent">
-                            <h3> 15:00 </h3>
-                            <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="weather icon" />
-                            <div class="forecast-temp">
-                                <strong>18º</strong> 16º
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="weekly-forecast row" id="forecast"></div>
         <!-- <li class="list-group-item bg-transparent">
                             <i class="fas fa-cloud-sun-rain"></i>
                             <br />
