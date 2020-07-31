@@ -14,9 +14,7 @@
 
 <body>
     <div class="header">
-        <h1>
-            item<strong>Weather</strong>
-        </h1>
+        <h1>item<strong>Weather</strong></h1>
     </div>
     <div class="container">
         <div class="search-bar">
@@ -24,27 +22,24 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-9">
-
-                            <input class="form-control" type="text" placeholder="Enter a City name" autocomplete="off" id="search-text">
+                            <input class="form-control" type="text" placeholder="Enter a City name" autocomplete="off" id="search-text" />
                         </div>
                         <div class="col-sm-3">
-                            <button type="submit" class="btn btn-primary" id="search-button">🔍</button>
-                            <button type="button" class="btn btn-success" id="location-button">📍</button>
+                            <button type="submit" class="btn btn-primary" id="search-button">
+                  🔍
+                </button>
+                            <button type="button" class="btn btn-success" id="location-button">
+                  📍
+                </button>
                         </div>
                     </div>
                 </div>
-
-
-
             </form>
-
         </div>
 
-
         <div class="row">
-
             <div class="card bg-transparent text-white image">
-                <img src="images/egyptian-pyramids-during-sunset-3873681.jpg" class="card-img" alt="Egypt">
+                <img src="images/egyptian-pyramids-during-sunset-3873681.jpg" class="card-img" alt="Egypt" />
                 <div class="card-img-overlay">
                     <h5 class="card-title" id="date"><strong>SAT</strong>, 6th July</h5>
                     <p class="city-name" id="city-name"><strong>Cairo</strong></p>
@@ -55,7 +50,9 @@
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="weather-description" id="weather-description"><strong>Mostly rainy</strong></h5>
+                        <h5 class="weather-description" id="weather-description">
+                            <strong>Mostly rainy</strong>
+                        </h5>
                         <img src="#" id="description-icon" alt="" />
                         <!-- <i class="fas fa-cloud-showers-heavy" id="description-icon"></i> -->
                     </div>
@@ -66,46 +63,56 @@
         <div class="row">
             <div class="col-sm-7">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item  bg-transparent" id="feels-like">Feels like: 12&#176C</li>
+                    <li class="list-group-item bg-transparent" id="feels-like">
+                        Feels like: 12&#176;C
+                    </li>
                     <li class="list-group-item bg-transparent" id="max">Max: 22ºC</li>
-                    <li class="list-group-item  bg-transparent" id="min">Min: 13ºC</li>
-                    <li class="list-group-item bg-transparent" id="wind">Wind: 4km/h</li>
-                    <li class="list-group-item bg-transparent" id="hum">Humidity: 63%</li>
+                    <li class="list-group-item bg-transparent" id="min">Min: 13ºC</li>
+                    <li class="list-group-item bg-transparent" id="wind">
+                        Wind: 4km/h
+                    </li>
+                    <li class="list-group-item bg-transparent" id="hum">
+                        Humidity: 63%
+                    </li>
                     <!-- <li class="list-group-item  bg-transparent" id="rain">Chance of rain: 80%</li> -->
-
                 </ul>
             </div>
 
-
             <div class="col-sm-5">
                 <div class="temperature">
-                    <span id="current-temp">14</span><small><span class="units"><a href="#" class="active" id="celcius">ºC</a>|<a href="#" id="fahrenheit">ºF</a></span></small>
-                </div>
-            </div>
-
+                    <span id="current-temp">14</span
+            ><small
+              ><span class="units"
+                ><a href="#" class="active" id="celcius">ºC</a>|<a
+                  href="#"
+                  id="fahrenheit"
+                  >ºF</a
+                ></span
+              ></small
+            >
+          </div>
         </div>
+      </div>
 
-
-
-        <div class="row">
-            <div class="col-12">
-                <div class="alert alert-warning" role="alert" id="friendly-advice">
-                    Friendly Advice - item recommendations based on current weather conditions 🙃
-                </div>
-
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="alert alert-warning" role="alert" id="friendly-advice">
+            Friendly Advice - item recommendations based on current weather
+            conditions 🙃
+          </div>
         </div>
+      </div>
 
-        <div class="next-week">
-            <p>
-                <strong>
-                Hourly Forecast:
-                </strong>
-                <hr />
-            </p>
-        </div>
+      <div class="next-week">
+        <p>
+          <strong>
+            Hourly Forecast:
+          </strong>
+        </p>
+        <hr />
+      </div>
 
-        <!-- <div class="row" id="forecast">
+      <!-- <div class="row" id="forecast">
             <div class="col-2">
                 <h3> 15:00 </h3>
                 <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="weather icon" />
@@ -114,8 +121,8 @@
                 </div>
             </div>
         </div> -->
-        <div class="weekly-forecast row" id="forecast"></div>
-        <!-- <li class="list-group-item bg-transparent">
+      <div class="weekly-forecast row" id="forecast"></div>
+      <!-- <li class="list-group-item bg-transparent">
                             <i class="fas fa-cloud-sun-rain"></i>
                             <br />
                             <p class="day-of-week">
@@ -157,8 +164,7 @@
             </div>
         </div> -->
 
-
-        <div class="weekly-forecast">
+      <!-- <div class="weekly-forecast">
             <div class="row">
                 <div class="col-6">
                     <ul class="list-group list-group-horizontal-md forecast">
@@ -210,21 +216,23 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <!-- <footer class="source-code">
+      <!-- <footer class="source-code">
             <small>This was coded by Catalina | <a href="https://github.com/CIDcoding/weather-application">open-source code</a></small>
         </footer> -->
-
-
-
     </div>
 
-
     <footer class="source-code">
-        <small>This was coded by Catalina | <a href="https://github.com/CIDcoding/weather-application" target="_blank">open-source code</a></small>
+      <small
+        >This was coded by Catalina |
+        <a
+          href="https://github.com/CIDcoding/weather-application"
+          target="_blank"
+          >open-source code</a
+        ></small
+      >
     </footer>
-
 
     <!--  <script>
         function searchCity(event) {
@@ -281,6 +289,5 @@
     </script>
  -->
     <script src="src/Java.js"></script>
-</body>
-
+  </body>
 </html>

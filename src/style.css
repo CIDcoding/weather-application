@@ -1,170 +1,169 @@
-    body {
-        background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
-        background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
-        font-family: 'Exo', sans-serif;
-        font-weight: 600;
-        margin-left: 25px;
-        color: #343A40;
-    }
-    
-    .container {
-        border: #343A40 solid 2px;
-        border-radius: 6px;
-        width: min-content;
-        box-shadow: 5px 5px 15px rgb(37, 36, 36);
-    }
-    
-    .header {
-        text-align: center;
-    }
-    
-    .search-bar {
-        margin-left: 12px;
-        margin-top: 20px;
-        padding: none;
-        line-height: 1px;
-    }
-    
-    .search-bar button {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 12px;
-        padding-right: 12px;
-        box-shadow: 2px 2px 10px rgb(37, 36, 36);
-    }
-    
-    .image {
-        width: 55%;
-    }
-    
-    .card {
-        margin-left: 25px;
-        line-height: 50px;
-        margin-right: 1px;
-        padding-right: 10px;
-        background: none;
-        border: none;
-    }
-    
-    .card-weather {
-        padding-bottom: 10px;
-        padding-right: 30px;
-        margin-left: 5px;
-        text-align: center;
-    }
-    
-    .card .city-name {
-        font-size: 55px;
-        color: rgb(187, 94, 94);
-    }
-    
-    .card p.time {
-        font-size: 15px;
-        margin-top: 40px;
-        right: 0;
-        bottom: 0;
-    }
-    
-    .card i {
-        font-size: 100px;
-    }
-    
-    .list-group {
-        line-height: 1px;
-        margin-left: 10px;
-        width: 103%;
-    }
-    
-    img#description-icon {
-        width: 180px;
-        margin-left: -30px;
-        margin-top: -45px;
-    }
-    
-    .temperature {
-        float: right;
-        margin-left: 10px;
-        margin-right: 47px;
-        margin-top: 25px;
-        font-size: 50px;
-        font-family: 'Exo', sans-serif;
-    }
-    
-    .units {
-        position: relative;
-        float: right;
-        font-size: 20px;
-        top: 8px;
-    }
-    
-    .temperature a.active {
-        color: #343A40;
-        cursor: default;
-    }
-    
-    .temperature a.active:hover {
-        text-decoration: none;
-    }
-    
-    .alert-warning {
-        margin-left: 10px;
-        margin-top: 5px;
-        border: #343A40 solid 1px;
-        margin-right: 10px;
-    }
-    
-    .next-week {
-        margin-left: 10px;
-    }
-    
-    .day-of-week {
-        line-height: 15px;
-        font-size: 15px;
-        text-align: center;
-    }
-    
-    .weekly-forecast {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    
-    li i {
-        font-size: 30px;
-        padding: 10px 18px 10px 18px;
-    }
-    
-    div.next-week p {
-        line-height: 1px;
-        font-size: 18px;
-    }
-    
-    .forecast {
-        margin-left: -2px;
-    }
-    
-    .weekly-forecast {
-        margin-bottom: 10px;
-    }
-    
-    .weekly-forecast img {
-        display: block;
-        margin: 0 auto;
-        width: 60px;
-        margin-bottom: 3px;
-    }
-    
-    .weekly-forecast h3 {
-        font-size: 20px;
-        text-align: center;
-    }
-    
-    .weekly-forecast .forecast-temp {
-        text-align: center;
-        font-weight: 400;
-    }
-    
-    .source-code {
-        text-align: center;
-        margin-top: 5px;
-        font-family: monospace;
-    }
+  body {
+      background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+      background-image: linear-gradient( to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+      font-family: "Exo", sans-serif;
+      font-weight: 600;
+      margin-left: 25px;
+      color: #343a40;
+  }
+  
+  .container {
+      border: #343a40 solid 2px;
+      border-radius: 6px;
+      box-shadow: 5px 5px 15px rgb(37, 36, 36);
+  }
+  
+  .header {
+      text-align: center;
+  }
+  
+  .search-bar {
+      margin-left: 12px;
+      margin-top: 20px;
+      padding: none;
+      line-height: 1px;
+  }
+  
+  .search-bar button {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 12px;
+      padding-right: 12px;
+      box-shadow: 2px 2px 10px rgb(37, 36, 36);
+  }
+  
+  .image {
+      width: 55%;
+  }
+  
+  .card {
+      margin-left: 25px;
+      line-height: 50px;
+      margin-right: 1px;
+      padding-right: 10px;
+      background: none;
+      border: none;
+  }
+  
+  .card-weather {
+      padding-bottom: 10px;
+      padding-right: 30px;
+      margin-left: 5px;
+      text-align: center;
+  }
+  
+  .card .city-name {
+      font-size: 55px;
+      color: rgb(187, 94, 94);
+  }
+  
+  .card p.time {
+      font-size: 15px;
+      margin-top: 40px;
+      right: 0;
+      bottom: 0;
+  }
+  
+  .card i {
+      font-size: 100px;
+  }
+  
+  .list-group {
+      line-height: 1px;
+      margin-left: 10px;
+      width: 103%;
+  }
+  
+  img#description-icon {
+      width: 180px;
+      margin-left: -30px;
+      margin-top: -45px;
+  }
+  
+  .temperature {
+      float: right;
+      margin-left: 10px;
+      margin-right: 47px;
+      margin-top: 25px;
+      font-size: 50px;
+      font-family: "Exo", sans-serif;
+  }
+  
+  .units {
+      position: relative;
+      float: right;
+      font-size: 20px;
+      top: 8px;
+  }
+  
+  .temperature a.active {
+      color: #343a40;
+      cursor: default;
+  }
+  
+  .temperature a.active:hover {
+      text-decoration: none;
+  }
+  
+  .alert-warning {
+      margin-left: 10px;
+      margin-top: 5px;
+      border: #343a40 solid 1px;
+      margin-right: 10px;
+  }
+  
+  .next-week {
+      margin-left: 10px;
+  }
+  
+  .day-of-week {
+      line-height: 15px;
+      font-size: 15px;
+      text-align: center;
+  }
+  
+  .weekly-forecast {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  
+  li i {
+      font-size: 30px;
+      padding: 10px 18px 10px 18px;
+  }
+  
+  div.next-week p {
+      line-height: 1px;
+      font-size: 18px;
+  }
+  
+  .forecast {
+      margin-left: -2px;
+  }
+  
+  .weekly-forecast {
+      margin-bottom: 10px;
+  }
+  
+  .weekly-forecast img {
+      display: block;
+      margin: 0 auto;
+      width: 60px;
+      margin-bottom: 3px;
+  }
+  
+  .weekly-forecast h3 {
+      font-size: 20px;
+      text-align: center;
+  }
+  
+  .weekly-forecast .forecast-temp {
+      text-align: center;
+      font-weight: 400;
+  }
+  
+  .source-code {
+      text-align: center;
+      margin-top: 5px;
+      font-family: monospace;
+  }
