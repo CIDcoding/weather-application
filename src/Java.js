@@ -207,11 +207,22 @@ function searchCity(event) {
 let form = document.querySelector("#search");
 form.addEventListener("submit", searchCity);
 
+// function changePicture(response) {
+//     console.log(response.data);
+//     let cityPhoto = document.querySelector("#country");
+//     cityPhoto.setAttribute("src", apiUrlFour) =
+// }
+
+
 function search(city) {
     let apiUrlTwo = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlTwo).then(showTemperature);
     let apiUrlThree = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlThree).then(displayForecast);
+    let apiUrlFour = `https://source.unsplash.com/featured/?{architecture},${city}`;
+    let cityPhoto = document.querySelector("#country");
+    cityPhoto.setAttribute("src", apiUrlFour);
+
 }
 
 // var fah = 57;
