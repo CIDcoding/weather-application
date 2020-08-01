@@ -38,8 +38,8 @@
   }
   
   #country {
-      width: 630px;
-      height: 400px;
+      width: 650px;
+      height: 430px;
       border-radius: 6px;
       border: solid 1px #343a40;
   }
@@ -61,13 +61,14 @@
   }
   
   .card .city-name {
-      font-size: 70px;
+      font-size: 75px;
+      line-height: 65px;
       color: rgb(187, 94, 94);
   }
   
   .card p.time {
-      font-size: 30px;
-      margin-top: 230px;
+      font-size: 50px;
+      margin-top: 80px;
       right: 0;
       bottom: 0;
   }
