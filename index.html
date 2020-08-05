@@ -56,7 +56,7 @@
                             <strong>Mostly rainy</strong>
                         </h5>
                         <img src="#" id="description-icon" alt="" />
-                        <!-- <i class="fas fa-cloud-showers-heavy" id="description-icon"></i> -->
+
                     </div>
                 </div>
             </div>
@@ -114,116 +114,10 @@
         <hr />
       </div>
 
-      <!-- <div class="row" id="forecast">
-            <div class="col-2">
-                <h3> 15:00 </h3>
-                <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="weather icon" />
-                <div class="forecast-temp">
-                    <strong>18º</strong> 16º
-                </div>
-            </div>
-        </div> -->
+     
       <div class="weekly-forecast row" id="forecast"></div>
       <hr />
-      <!-- <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-sun-rain"></i>
-                            <br />
-                            <p class="day-of-week">
-                                MON
-                                <br /> 16&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-showers-heavy"></i>
-                            <br />
-                            <p class="day-of-week">
-                                TUE
-                                <br /> 12&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-showers-heavy"></i>
-                            <br />
-                            <p class="day-of-week">
-                                WED
-                                <br /> 13&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-sun"></i>
-                            <br />
-                            <p class="day-of-week">
-                                THU
-                                <br /> 19&#176C
-                            </p>
-
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div> -->
-
-      <!-- <div class="weekly-forecast">
-            <div class="row">
-                <div class="col-6">
-                    <ul class="list-group list-group-horizontal-md forecast">
-                        <li class="list-group-item  bg-transparent">
-                            <i class="fas fa-cloud-sun"></i>
-                            <br />
-                            <p class="day-of-week">
-                                SUN
-                                <br /> <strong>18&#176C</strong>
-                            </p>
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-sun-rain"></i>
-                            <br />
-                            <p class="day-of-week">
-                                MON
-                                <br /> 16&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-showers-heavy"></i>
-                            <br />
-                            <p class="day-of-week">
-                                TUE
-                                <br /> 12&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-cloud-showers-heavy"></i>
-                            <br />
-                            <p class="day-of-week">
-                                WED
-                                <br /> 13&#176C
-                            </p>
-
-                        </li>
-                        <li class="list-group-item bg-transparent">
-                            <i class="fas fa-sun"></i>
-                            <br />
-                            <p class="day-of-week">
-                                THU
-                                <br /> 19&#176C
-                            </p>
-
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div> -->
-
-      <!-- <footer class="source-code">
-            <small>This was coded by Catalina | <a href="https://github.com/CIDcoding/weather-application">open-source code</a></small>
-        </footer> -->
+     
     </div>
 
     <footer class="source-code">
@@ -237,60 +131,7 @@
       >
     </footer>
 
-    <!--  <script>
-        function searchCity(event) {
-            event.preventDefault();
-            let searchInput = document.querySelector("#search-text");
-            let city = document.querySelector("#city-name");
-            city.innerHTML = `${searchInput.value}`;
-        }
-
-        let form = document.querySelector("#search");
-        form.addEventListener("submit", searchCity);
-    </script> -->
-
-    <!--  <script>
-        var temp
-        let weather = {
-            "paris": {
-                temp: 19.7,
-                humidity: 80
-            },
-            "tokyo": {
-                temp: 17.3,
-                humidity: 50
-            },
-            "lisbon": {
-                temp: 30.2,
-                humidity: 20
-            },
-            "san francisco": {
-                temp: 20.9,
-                humidity: 100
-            },
-            "moscow": {
-                temp: -5,
-                humidity: 20
-            }
-        };
-        let searchCity = prompt("Enter a city name").toLocaleLowerCase().trim();
-
-        var fah
-
-        function toFahrenheit(degrees) {
-            let fah = (degrees * 9 / 5) + 32;
-            return fah
-
-        }
-
-        let weather_keys = Object.keys(weather);
-        if (weather_keys.includes(searchCity)) {
-            alert(`it is currently ${weather[searchCity].temp}ºC (${toFahrenheit(weather[searchCity].temp)}ºF) in ${searchCity} with a humidity of ${weather[searchCity].humidity}%`)
-        } else {
-            alert(`Sorry, we do not know the temperature in this city, try going to https://www.google.com/search?q=weather+${searchCity}`)
-        }
-    </script>
- -->
+    
     <script src="src/Java.js"></script>
   </body>
 </html>

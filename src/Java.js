@@ -149,8 +149,7 @@ function showTemperature(response) {
     )}ºC`;
     let windSpeed = document.querySelector("#wind");
     windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed}mph`;
-    // let chanceOfRain = document.querySelector("#rain");
-    // chanceOfRain.innerHTML = `Chance of rain: ${response.data.rain["1h"] * 100}%`
+
 }
 
 //Location
@@ -209,21 +208,7 @@ function displayForecast(response) {
                 </div>
         </div>`;
     }
-    // forecastElement.innerHTML = `
-    // <div class="row">
-    //             <div class="col-6">
-    //                 <ul class="list-group list-group-horizontal-md forecast">
-    //                     <li class="list-group-item  bg-transparent">
-    //                         <h3> ${formatHours(forecast.dt *1000)} </h3>
-    //                         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="weather icon" />
-    //                         <div class="forecast-temp">
-    //                             <strong>${Math.round(forecast.main.temp_max)}º</strong>  ${Math.round(forecast.main.temp_min)}º
-    //                         </div>
-    //                     </li>
-    //                 </ul>
-    //             </div>
-    //         </div>
-    //     </div>`;
+
 }
 
 //City
@@ -238,11 +223,7 @@ function searchCity(event) {
 let form = document.querySelector("#search");
 form.addEventListener("submit", searchCity);
 
-// function changePicture(response) {
-//     console.log(response.data);
-//     let cityPhoto = document.querySelector("#country");
-//     cityPhoto.setAttribute("src", apiUrlFour) =
-// }
+
 
 
 function search(city) {
@@ -250,13 +231,13 @@ function search(city) {
     axios.get(apiUrlTwo).then(showTemperature);
     let apiUrlThree = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlThree).then(displayForecast);
-    let apiUrlFour = `https://source.unsplash.com/featured/?{city},${city}`;
+    let apiUrlFour = `https://source.unsplash.com/featured/?${city},{scenery}`;
     let cityPhoto = document.querySelector("#country");
     cityPhoto.setAttribute("src", apiUrlFour);
 
 }
 
-// var fah = 57;
+
 
 //Unit conversion
 function toFahrenheit(event) {
@@ -275,8 +256,6 @@ tempFahrenheit.addEventListener("click", toFahrenheit);
 
 function toDegrees(event) {
     event.preventDefault();
-    // let deg = ((fah - 32) * 5) / 9;
-    // deg = Math.round(deg);
     let currentTemp = document.querySelector("#current-temp");
     tempCelcius.classList.add("active");
     tempFahrenheit.classList.remove("active");
