@@ -159,6 +159,8 @@ function myLocation(position) {
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemperature);
+    let photo = document.querySelector("#country");
+    photo.setAttribute("src", "https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
 }
 
 function getPosition(event) {
