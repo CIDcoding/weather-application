@@ -61,49 +61,80 @@ function showTemperature(response) {
 
     let currentWeather = `${response.data.weather[0].description}`;
     let itemSuggestion = document.querySelector("#friendly-advice");
+
     if (
-        (currentWeather === "clear sky" ||
-            currentWeather === "sunny" ||
-            currentWeather === "sun") &&
+        (currentWeather.includes("clear sky") || currentWeather.includes("sunny") || currentWeather.includes("sun") || currentWeather.includes("few clouds") ||
+            currentWeather.includes("scattered clouds")) &&
         temperature >= 25
     ) {
         itemSuggestion.innerHTML = `Friendly advice - consider wearing a 👒, bringing sunscreen and 🕶️ along!`;
     } else if (
-        (currentWeather === "clear sky" ||
-            currentWeather === "sunny" ||
-            currentWeather === "sun") &&
-        20 < temperature < 25
+        (currentWeather.includes("clear sky") ||
+            currentWeather.includes("sunny") ||
+            currentWeather.includes("sun") ||
+            currentWeather.includes("few clouds") ||
+            currentWeather.includes("scattered clouds")) &&
+        temperature < 25
     ) {
         itemSuggestion.innerHTML = `Friendly advice - it's not too hot but a 👒 and 🕶️ might come in handy!`;
     } else if (
-        (currentWeather === "clear sky" ||
-            currentWeather === "sunny" ||
-            currentWeather === "sun") &&
+        (currentWeather.includes("clear sky") ||
+            currentWeather.includes("sunny") ||
+            currentWeather.includes("sun") ||
+            currentWeather.includes("few clouds") ||
+            currentWeather.includes("scattered clouds")) &&
         temperature < 20
     ) {
         itemSuggestion.innerHTML = `Friendly advice - Don't forget your 🕶️ this time!`;
     } else if (
-        (currentWeather === "clear sky" ||
-            currentWeather === "sunny" ||
-            currentWeather === "sun") &&
+        (currentWeather.includes("clear sky") ||
+            currentWeather.includes("sunny") ||
+            currentWeather.includes("sun") ||
+            currentWeather.includes("few clouds") ||
+            currentWeather.includes("broken clouds") ||
+            currentWeather.includes("scattered clouds") ||
+            currentWeather.includes("overcast clouds")) &&
         temperature < 15
     ) {
         itemSuggestion.innerHTML = `Friendly advice - perhaps it's time to layer up with a hoodie or jacket!`;
+    } else if (currentWeather.includes("broken clouds") || currentWeather.includes("overcast clouds")) {
+        itemSuggestion.innerHTML = `Friendly advice - guess you won't be needing 🕶️ anymore, maybe a light jacket for later!`;
     } else if (
-        currentWeather === "light rain" ||
-        currentWeather === "rain" ||
-        currentWeather === "showers"
+        currentWeather.includes("light rain") ||
+        currentWeather.includes("rain") ||
+        currentWeather.includes("shower rain") ||
+        currentWeather.includes("drizzle")
     ) {
         itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ this time!`;
     } else if (
-        (currentWeather === "light rain" ||
-            currentWeather === "rain" ||
-            currentWeather === "showers") &&
+        (currentWeather.includes("light rain") ||
+            currentWeather.includes("rain") ||
+            currentWeather.includes("shower rain") ||
+            currentWeather.includes("drizzle")) &&
         temperature < 20
     ) {
-        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ and a light coat might come in handy!`;
-    } else if (currentWeather === "heavy rain") {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️ and a rain coat might come in handy!`;
+    } else if (currentWeather.includes("heavy rain") ||
+        currentWeather.includes("moderate rain") || currentWeather.includes("heavy intensity rain") || currentWeather.includes("heavy")) {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your ☂️, rain coat and boots 👢!`;
+
+    } else if (currentWeather.includes("very heavy rain") || currentWeather.includes("extreme rain") || currentWeather.includes("ragged")) {
         itemSuggestion.innerHTML = `Friendly advice -perhaps staying indoors until it stops raining 🐈s and 🐕s is a good idea!`;
+    } else if (currentWeather.includes("thunderstorm")) {
+        itemSuggestion.innerHTML = `Friendly advice - if you must leave the house, wear rubber boots and a rain coat and stay away from conductors! `
+    } else if (currentWeather.includes("snow") || currentWeather.includes("shower snow") || currentWeather.includes("light snow") || currentWeather.includes("shower snow") || currentWeather.includes("sleet")) {
+        itemSuggestion.innerHTML = `Friendly advice - Don't forget your 🧣 and 🧤 to keep warm! Maybe you'll enjoy building a ⛄ or ⛷️ today if you have nothing planned 😉.`
+    } else if (currentWeather.includes("rain and snow")) {
+        itemSuggestion.innerHTML = `Friendly advice - the question here is, what don't you need? 🧣, 🧤 and an 🌂!`
+    } else if (currentWeather.includes("heavy snow") || currentWeather.includes("heavy shower snow")) {
+        itemSuggestion.innerHTML = `Friendly advice - Oh man, looks like you'll need that shove afterall 😅 ...`
+    } else if (currentWeather.includes("smoke") || currentWeather.includes("fog") || currentWeather.includes("haze") || currentWeather.includes("dust") || currentWeather.includes("mist")) {
+        itemSuggestion.innerHTML = `Friendly advice - If you're planning on driving, please bring a windshield wiper along. Otherwise, be more attentative 👀 when moving about as visibility is more limited. `
+    } else if (currentWeather.includes("tornado") || currentWeather.includes("volcanic ash")) {
+        itemSuggestion.innerHTML = `Friendly advice - ⚠️ please stay home for your own safety! ⚠️`;
+    } else {
+        itemSuggestion.innerHTML = `Oh boy oh boy, I'm afraid I'm out of suggestions, it's all up to you now! 🤭`
+
     }
 
     let maxTemp = document.querySelector("#max");
@@ -219,7 +250,7 @@ function search(city) {
     axios.get(apiUrlTwo).then(showTemperature);
     let apiUrlThree = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlThree).then(displayForecast);
-    let apiUrlFour = `https://source.unsplash.com/featured/?{architecture},${city}`;
+    let apiUrlFour = `https://source.unsplash.com/featured/?{city},${city}`;
     let cityPhoto = document.querySelector("#country");
     cityPhoto.setAttribute("src", apiUrlFour);
 
